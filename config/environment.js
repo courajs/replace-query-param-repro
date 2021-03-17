@@ -4,7 +4,7 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'replace-query-param-repro',
     environment,
-    rootURL: '/',
+    rootURL: process.env['EMBER_ROOT_URL'] || '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
