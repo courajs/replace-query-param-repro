@@ -5,8 +5,10 @@ export default class TwoRoute extends Route {
   queryParams = {
     a: {
       replace: true,
-      // refreshModel: true,
+      refreshModel: true,
     },
+    b: {replace: true},
+    c: {refreshModel: true},
   };
 
   afterModel(_,transition) {
@@ -17,6 +19,9 @@ export default class TwoRoute extends Route {
   }
 
   setupController(controller, model, transition) {
+    window.the_transition = transition;
+    console.log(transition);
     super.setupController(controller, model, transition);
+    controller.transition = transition;
   }
 }
